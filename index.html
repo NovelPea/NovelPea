@@ -8,7 +8,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 :root{--ink:#242b26;--muted:#7c837d;--green:#416b4f;--dark:#31543d;--mint:#e9f0e8;--cream:#f8f7f2;--line:#e9e9e2;--white:#fff;--shadow:0 12px 35px #2b3b2e12}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:14px "DM Sans",sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:14px "DM Sans",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}
 .auth-screen{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--white)}
 .auth-art{padding:8%;display:flex;flex-direction:column;justify-content:space-between;color:white;background:linear-gradient(145deg,#365b42,#77926d);position:relative;overflow:hidden}
 .auth-art:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-140px;bottom:-180px;border:1px solid #ffffff30;box-shadow:0 0 0 40px #ffffff0c,0 0 0 80px #ffffff09}
@@ -25,8 +25,31 @@
 .theme-toggle{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--white);color:var(--ink);font-size:11px;font-weight:600}
 main{width:min(1180px,92%);margin:0 auto;padding:35px 0 60px;flex:1}
 .welcome{margin-bottom:24px}.eyebrow{color:var(--green);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}.welcome h1{font:600 clamp(28px,4vw,38px)/1.15 "Playfair Display",Georgia,serif;margin:0 0 8px}.welcome p{color:var(--muted);margin:0}
-.profile-panel{margin:0 0 20px;padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--white);box-shadow:var(--shadow)}.profile-panel h2{margin:18px 0 8px;font:600 27px "Playfair Display",Georgia,serif}.profile-panel p{color:var(--muted);line-height:1.7}.profile-private{padding:18px;border-radius:10px;background:var(--mint);color:var(--dark)}.profile-private p{color:var(--dark)}
-.profile-bio{white-space:pre-wrap}.profile-edit-form{max-width:520px;margin-top:18px}.profile-edit-form label{display:block;margin:12px 0 6px;font-size:12px;font-weight:700;color:var(--muted)}.profile-edit-form input,.profile-edit-form textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink)}.profile-edit-form textarea{min-height:120px;resize:vertical}.profile-actions{display:flex;gap:8px;margin-top:14px}
+.profile-panel{margin:0 0 20px;padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--white);box-shadow:var(--shadow)}
+.profile-panel h2{margin:0 0 8px;font:600 27px "Playfair Display",Georgia,serif}
+.profile-panel p{color:var(--muted);line-height:1.7}
+.profile-private{padding:18px;border-radius:10px;background:var(--mint);color:var(--dark)}.profile-private p{color:var(--dark)}
+.profile-hero{display:flex;align-items:center;gap:17px;padding:22px;border-radius:12px;background:var(--profile-color,#416b4f);color:white;margin:18px 0}
+.profile-avatar{width:66px;height:66px;flex:0 0 66px;border-radius:50%;display:grid;place-items:center;background:#ffffff2c;border:2px solid #ffffff80;font:600 26px "Playfair Display",Georgia,serif}
+.profile-hero h2{color:white;margin:0 0 4px}.profile-hero p{color:#ffffffd9;margin:0}
+.profile-bio{white-space:pre-wrap;margin:12px 0}
+.profile-details{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.profile-detail{padding:7px 10px;border-radius:20px;background:var(--mint);color:var(--dark);font-size:11px}
+.profile-section{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.profile-section h3{margin:0 0 12px;font:600 20px "Playfair Display",Georgia,serif}
+.profile-books{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px}
+.profile-book{padding:13px;border:1px solid var(--line);border-radius:10px;background:var(--white)}
+.profile-book-cover{height:110px;display:grid;place-items:center;margin-bottom:10px;border-radius:7px;color:#fff8df;text-align:center;padding:10px;font:600 17px "Playfair Display",Georgia,serif;overflow-wrap:anywhere}
+.profile-book-title{font-size:12px;font-weight:700}.profile-book-meta{margin-top:5px;color:var(--muted);font-size:10px}
+.profile-empty{padding:16px;border-radius:9px;background:var(--cream);color:var(--muted);font-size:12px}
+.profile-edit-form{max-width:620px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.profile-edit-form label{display:block;margin:12px 0 6px;font-size:12px;font-weight:700;color:var(--muted)}
+.profile-edit-form input,.profile-edit-form textarea,.profile-edit-form select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink)}
+.profile-edit-form textarea{min-height:95px;resize:vertical}
+.profile-color-options{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+.profile-color-option{width:30px;height:30px;border:2px solid var(--white);outline:1px solid var(--line);border-radius:50%;padding:0}
+.profile-color-option.selected{outline:2px solid var(--ink)}
+.profile-actions{display:flex;gap:8px;margin-top:14px}
 .project-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:15px}.project-title{display:flex;align-items:center;gap:10px;min-width:180px}.book-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:#f6e9dd;font-size:18px}.project-title input{width:min(300px,45vw);border:0;background:transparent;outline:0;font-weight:700;color:var(--ink);font-size:14px}.project-title small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
 .project-actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:8px;padding:9px 12px;font-size:11px;font-weight:600}.btn:hover{filter:brightness(.97)}.btn.primary{border-color:var(--green)}
 .workspace{display:grid;grid-template-columns:215px minmax(0,1fr);min-height:570px;background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
@@ -40,11 +63,50 @@ aside{padding:18px 12px;background:var(--white);border-right:1px solid var(--lin
 .editor-bottom{display:flex;align-items:center;justify-content:space-between;padding:11px 20px;border-top:1px solid var(--line);color:var(--muted);font-size:10px}.word-count strong{color:var(--ink)}.focus-button{border:0;background:transparent;color:var(--green);font-size:11px;font-weight:600}
 .tip{margin-top:14px;padding:12px 15px;border:1px solid var(--line);border-radius:9px;background:var(--mint);color:var(--muted);font-size:11px;line-height:1.6}.tip strong{color:var(--dark)}
 .panel-content{width:min(680px,90%);margin:0 auto;padding:35px 0;flex:1}.panel-content h2{font:600 25px "Playfair Display",Georgia,serif;margin:0 0 8px}.panel-content p{color:var(--muted);line-height:1.7}.panel-content textarea{width:100%;min-height:300px;border:1px solid var(--line);border-radius:9px;padding:14px;resize:vertical;outline-color:var(--green);line-height:1.7;background:var(--white);color:var(--ink)}
-.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,12px);padding:10px 15px;border-radius:8px;color:white;background:#293a2d;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:5}.toast.show{opacity:1;transform:translate(-50%,0)}
-.modal-backdrop{position:fixed;inset:0;background:#15201970;display:grid;place-items:center;padding:20px;z-index:10}.modal{width:min(400px,100%);background:var(--white);color:var(--ink);border-radius:13px;padding:22px;box-shadow:var(--shadow)}.modal h3{font:600 22px "Playfair Display",Georgia,serif;margin:0 0 15px}.modal input{width:100%;padding:11px;border:1px solid var(--line);border-radius:8px;margin-bottom:14px;background:var(--white);color:var(--ink)}.modal-actions{display:flex;justify-content:flex-end;gap:8px}
+.library-panel{padding:24px;background:var(--white);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.library-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:20px}
+.library-heading h2{margin:0 0 6px;font:600 27px "Playfair Display",Georgia,serif}
+.library-heading p{margin:0;color:var(--muted);font-size:12px}
+.library-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.library-search{flex:1;min-width:170px;height:38px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink);outline-color:var(--green);font-size:12px}
+.library-filter{height:38px;padding:0 10px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink);font-size:11px}
+.novel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:16px}
+.novel-card{min-width:0;padding:11px;border:1px solid var(--line);border-radius:11px;background:var(--white);transition:transform .15s,box-shadow .15s}
+.novel-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.novel-cover{height:155px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;overflow:hidden;padding:13px 10px;border-radius:7px;color:#fff8df;text-align:center;box-shadow:inset 0 0 0 1px #ffffff35}
+.novel-cover-title{max-width:100%;font:600 18px/1.1 "Playfair Display",Georgia,serif;overflow-wrap:anywhere;text-shadow:0 2px 5px #0006}
+.novel-cover-symbol{font-size:35px;text-shadow:0 3px 8px #0005}
+.novel-cover-author{font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.cover-0{background:radial-gradient(circle at 50% 55%,#dfb96e 0 5%,#1b4a42 7% 30%,#102b2a 70%)}
+.cover-1{background:radial-gradient(circle at 50% 48%,#d1ad65 0 4%,#17475a 12%,#071c2b 65%)}
+.cover-2{background:linear-gradient(150deg,#ed7954,#e6b16c 48%,#8f3028)}
+.cover-3{background:radial-gradient(ellipse at 50% 65%,#e7c06f 0 5%,#18483d 7% 28%,#071d20 68%)}
+.cover-4{background:linear-gradient(150deg,#341a33,#b43d4c 55%,#f2a957)}
+.cover-5{background:radial-gradient(circle at 50% 53%,#eacb79 0 5%,#17445b 8% 30%,#091d32 68%)}
+.novel-card-info{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;padding-top:10px}
+.novel-card-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;font-weight:700}
+.novel-card-genre{margin-top:4px;color:var(--muted);font-size:10px}
+.novel-status{display:inline-block;margin-top:7px;padding:4px 7px;border-radius:20px;background:var(--mint);color:var(--dark);font-size:9px}
+.novel-card-actions{display:flex;gap:7px;margin-top:9px}
+.novel-card-actions button{flex:1;min-width:0;padding:8px 5px;border:1px solid var(--line);border-radius:7px;background:var(--white);font-size:10px;font-weight:700}
+.novel-card-actions .novel-open{margin-top:0;color:var(--green)}
+.novel-open:hover{background:var(--mint)}
+.novel-delete{color:#b74b3c}
+.novel-delete:hover{background:#fff0ed}
+body.dark-mode .novel-delete:hover{background:#442b28}
+.library-empty{grid-column:1/-1;padding:35px 10px;text-align:center;color:var(--muted);font-size:12px}
+.library-empty strong{display:block;margin-bottom:6px;color:var(--ink);font:600 20px "Playfair Display",Georgia,serif}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,12px);padding:10px 15px;border-radius:8px;color:white;background:#293a2d;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:12}.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal-backdrop{position:fixed;inset:0;background:#15201970;display:grid;place-items:center;padding:20px;z-index:10}.modal{width:min(400px,100%);background:var(--white);color:var(--ink);border-radius:13px;padding:22px;box-shadow:var(--shadow)}.modal h3{font:600 22px "Playfair Display",Georgia,serif;margin:0 0 15px}.modal input,.modal select{width:100%;padding:11px;border:1px solid var(--line);border-radius:8px;margin-bottom:14px;background:var(--white);color:var(--ink)}.modal-actions{display:flex;justify-content:flex-end;gap:8px}
 body.dark-mode{--ink:#e8ece7;--muted:#a1aaa2;--green:#8bb896;--dark:#b0d0b5;--mint:#29392d;--cream:#171c18;--line:#343c35;--white:#222923;--shadow:0 12px 35px #0004}
 body.dark-mode .auth-art{background:linear-gradient(145deg,#263e2e,#425e46)}body.dark-mode .book-icon{background:#45382e}body.dark-mode .tip{background:#222d24}body.dark-mode .submit-btn,body.dark-mode .btn.primary{color:#142017}body.dark-mode .nav-item:hover,body.dark-mode .tool:hover{background:#303a32}
-@media(max-width:760px){.auth-screen{grid-template-columns:1fr}.auth-art{min-height:210px;padding:23px 7%}.art-copy{margin-top:28px}.art-copy h1{font-size:36px}.art-copy p,.art-footer{display:none}.auth-panel{padding:28px 20px}header{padding:10px 4%}.header-right{gap:6px;flex-wrap:wrap;justify-content:flex-end}.theme-toggle{padding:7px}.theme-toggle #themeLabel{display:none}.save-status{display:none}main{width:94%;padding-top:25px}.workspace{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--line);padding:9px}.side-label,.outline{display:none}.sidebar-nav{display:flex;overflow:auto;gap:4px}.nav-item{width:auto;white-space:nowrap;margin:0}.project-bar{flex-wrap:wrap}.project-actions{width:100%;flex-wrap:wrap}.editor-top{padding:0 12px}.page{padding-top:24px}.editor-bottom{padding:10px 12px}}
+@media(max-width:760px){
+.auth-screen{grid-template-columns:1fr}.auth-art{min-height:210px;padding:23px 7%}.art-copy{margin-top:28px}.art-copy h1{font-size:36px}.art-copy p,.art-footer{display:none}.auth-panel{padding:28px 20px}
+header{padding:10px 4%}.header-right{gap:6px;flex-wrap:wrap;justify-content:flex-end}.theme-toggle{padding:7px}.theme-toggle #themeLabel{display:none}.save-status{display:none}
+main{width:94%;padding-top:25px}.workspace{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--line);padding:9px}.side-label,.outline{display:none}.sidebar-nav{display:flex;overflow:auto;gap:4px}.nav-item{width:auto;white-space:nowrap;margin:0}
+.project-bar{flex-wrap:wrap}.project-actions{width:100%;flex-wrap:wrap}.editor-top{padding:0 12px}.page{padding-top:24px}.editor-bottom{padding:10px 12px}.library-panel{padding:16px}.novel-grid{grid-template-columns:repeat(auto-fill,minmax(125px,1fr))}
+.profile-panel{padding:16px}.profile-hero{padding:16px}.profile-books{grid-template-columns:repeat(auto-fill,minmax(125px,1fr))}
+}
 </style>
 </head>
 <body>
@@ -79,7 +141,7 @@ body.dark-mode .auth-art{background:linear-gradient(145deg,#263e2e,#425e46)}body
 
 <div class="app hidden" id="app">
   <header>
-    <a class="brand" href="#"><span class="brand-mark">✦</span><span class="brand-name">Novel<span>Pea</span></span></a>
+    <a class="brand" href="#" id="brandHome"><span class="brand-mark">✦</span><span class="brand-name">Novel<span>Pea</span></span></a>
     <div class="header-right">
       <div class="save-status"><span class="save-dot"></span><span id="saveStatus">All changes saved</span></div>
       <button class="btn" id="profileBtn" type="button">View public profile</button>
@@ -95,11 +157,27 @@ body.dark-mode .auth-art{background:linear-gradient(145deg,#263e2e,#425e46)}body
       <div id="profileContent"></div>
     </section>
 
-    <div class="project-bar">
+    <section id="libraryPanel" class="library-panel hidden">
+      <div class="library-heading">
+        <div><h2>Your novels</h2><p>All the novels you’ve made, together in one place.</p></div>
+        <button class="btn primary" id="libraryNewNovel" type="button">＋ New novel</button>
+      </div>
+      <div class="library-tools">
+        <input class="library-search" id="librarySearch" type="search" placeholder="Search your novels…" aria-label="Search your novels">
+        <select class="library-filter" id="libraryFilter" aria-label="Filter novels">
+          <option value="all">All novels</option>
+          <option value="progress">In progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div class="novel-grid" id="novelGrid"></div>
+    </section>
+
+    <div class="project-bar" id="projectBar">
       <div class="project-title"><div class="book-icon">📖</div><div><input id="novelName" aria-label="Novel title" value="My Novel"><small id="projectMeta">Your novel</small></div></div>
-      <div class="project-actions"><button class="btn" id="newNovelBtn">＋ New novel</button><button class="btn" id="exportBtn">↗ Export novel</button><button class="btn primary" id="newChapterBtn">＋ New chapter</button></div>
+      <div class="project-actions"><button class="btn" id="yourNovelsBtn" type="button">▦ Your novels</button><button class="btn" id="newNovelBtn">＋ New novel</button><button class="btn" id="exportBtn">↗ Export novel</button><button class="btn primary" id="newChapterBtn">＋ New chapter</button></div>
     </div>
-    <section class="workspace">
+    <section class="workspace" id="workspace">
       <aside>
         <div class="side-label">Workspace</div>
         <nav class="sidebar-nav">
@@ -131,7 +209,7 @@ body.dark-mode .auth-art{background:linear-gradient(145deg,#263e2e,#425e46)}body
         <div class="editor-bottom"><div class="word-count"><strong id="wordCount">0</strong> words · <span id="charCount">0</span> characters</div><button class="focus-button" id="focusBtn">⛶ Focus mode</button></div>
       </div>
     </section>
-    <div class="tip"><strong>Writing tip</strong> — Keep going. You can revise a rough draft; you can’t revise a blank page.</div>
+    <div class="tip" id="writingTip"><strong>Writing tip</strong> — Keep going. You can revise a rough draft; you can’t revise a blank page.</div>
   </main>
 </div>
 
@@ -156,16 +234,36 @@ function setTheme(theme){
 $("themeToggle").onclick=()=>setTheme(document.body.classList.contains("dark-mode")?"light":"dark");
 setTheme(localStorage.getItem("novelpea-theme")||"light");
 
-const starter=()=>({id:crypto.randomUUID(),title:"My Novel",bible:"",characters:"",places:"",notes:"",chapters:[{id:crypto.randomUUID(),title:"Chapter One",text:""}],activeChapterId:null});
+const makeId=()=>crypto.randomUUID?.()||"id-"+Date.now()+"-"+Math.random().toString(16).slice(2);
+const starter=()=>({id:makeId(),title:"My Novel",genre:"Novel",status:"progress",bible:"",characters:"",places:"",notes:"",chapters:[{id:makeId(),title:"Chapter One",text:""}],activeChapterId:null});
+
+function makeTestNovel(){
+  const novel={
+    id:makeId(),title:"Test Novel",genre:"Test",status:"progress",
+    bible:"",characters:"",places:"",notes:"",
+    chapters:[
+      {id:makeId(),title:"Chapter One",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+      {id:makeId(),title:"Chapter Two",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."},
+      {id:makeId(),title:"Chapter Three",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."}
+    ],activeChapterId:null
+  };
+  novel.activeChapterId=novel.chapters[0].id;
+  return novel;
+}
+
 function loadLibrary(){
   try{library=JSON.parse(localStorage.getItem(DB_KEY))||{novels:[],activeNovelId:null}}catch{library={novels:[],activeNovelId:null}}
+  if(!Array.isArray(library.novels))library={novels:[],activeNovelId:null};
   if(!library.novels.length){const n=starter();n.activeChapterId=n.chapters[0].id;library.novels.push(n);library.activeNovelId=n.id;persist()}
   activeNovel=library.novels.find(n=>n.id===library.activeNovelId)||library.novels[0];
   library.activeNovelId=activeNovel.id;
+  if(!Array.isArray(activeNovel.chapters)||!activeNovel.chapters.length)activeNovel.chapters=[{id:makeId(),title:"Chapter One",text:""}];
   activeChapter=activeNovel.chapters.find(c=>c.id===activeNovel.activeChapterId)||activeNovel.chapters[0];
   activeNovel.activeChapterId=activeChapter.id;
 }
 function persist(){localStorage.setItem(DB_KEY,JSON.stringify(library))}
+function getAccount(){try{return JSON.parse(localStorage.getItem("novelpea-account")||"null")}catch{return null}}
+function saveAccount(user){localStorage.setItem("novelpea-account",JSON.stringify(user))}
 function showToast(text){$("toast").textContent=text;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2100)}
 function setMode(mode){
   const signup=mode==="signup";$("loginForm").classList.toggle("hidden",signup);$("signupForm").classList.toggle("hidden",!signup);
@@ -174,81 +272,173 @@ function setMode(mode){
   $("authSubtitle").textContent=signup?"Set up your writing space and start your next story.":"Log in to pick up where your story left off.";
 }
 $("loginTab").onclick=()=>setMode("login");$("signupTab").onclick=()=>setMode("signup");
+
 function enterApp(user){
   localStorage.setItem("novelpea-session","true");$("authScreen").classList.add("hidden");$("app").classList.remove("hidden");
-  const name=user.penName||user.fullName||"Writer";$("greeting").textContent="Good morning, "+name+".";$("avatar").textContent=name[0].toUpperCase();
-  loadLibrary();render();
+  updateAccountUI(user);
+  loadLibrary();render();showWorkspace();
+}
+function updateAccountUI(user){
+  const name=user.penName||user.fullName||"Writer";
+  $("greeting").textContent="Good morning, "+name+".";
+  $("avatar").textContent=name[0].toUpperCase();
 }
 $("signupForm").addEventListener("submit",e=>{
   e.preventDefault();const age=Number($("age").value),birth=new Date($("birthday").value),password=$("signupPassword").value,err=$("signupError");
   if(age<13){err.textContent="You must be at least 13 to create an account.";return}
   if(birth>new Date()){err.textContent="Birthday cannot be in the future.";return}
   if(password.length<8){err.textContent="Password must be at least 8 characters.";return}
-  const user={fullName:$("fullName").value.trim(),penName:$("penName").value.trim(),email:$("signupEmail").value.trim().toLowerCase(),age,birthday:$("birthday").value,password,bio:""};
-  localStorage.setItem("novelpea-account",JSON.stringify(user));err.textContent="";enterApp(user);
+  const user={
+    fullName:$("fullName").value.trim(),penName:$("penName").value.trim(),
+    email:$("signupEmail").value.trim().toLowerCase(),age,birthday:$("birthday").value,password,
+    bio:"",location:"",website:"",writingAbout:"",profileColor:"#416b4f"
+  };
+  saveAccount(user);err.textContent="";enterApp(user);
 });
 $("loginForm").addEventListener("submit",e=>{
-  e.preventDefault();const saved=JSON.parse(localStorage.getItem("novelpea-account")||"null");
+  e.preventDefault();const saved=getAccount();
   if(!saved||saved.email!==$("loginEmail").value.trim().toLowerCase()||saved.password!==$("loginPassword").value){$("loginError").textContent="Email or password is incorrect.";return}
   $("loginError").textContent="";enterApp(saved);
 });
 $("logoutBtn").onclick=()=>{localStorage.removeItem("novelpea-session");$("app").classList.add("hidden");$("authScreen").classList.remove("hidden");setMode("login")};
 
+function appendProfileNovels(container){
+  const section=document.createElement("section");section.className="profile-section";
+  const heading=document.createElement("h3");heading.textContent="Novels";
+  section.append(heading);
+  const books=document.createElement("div");books.className="profile-books";
+  if(!library.novels.length){
+    const empty=document.createElement("div");empty.className="profile-empty";empty.textContent="No novels to show yet.";section.append(empty);
+  }else{
+    library.novels.forEach((novel,index)=>{
+      const card=document.createElement("article");card.className="profile-book";
+      const cover=document.createElement("div");cover.className="profile-book-cover cover-"+(index%6);cover.textContent=novel.title;
+      const title=document.createElement("div");title.className="profile-book-title";title.textContent=novel.title;
+      const meta=document.createElement("div");meta.className="profile-book-meta";
+      const chapterCount=(novel.chapters||[]).length;
+      meta.textContent=(novel.genre||"Novel")+" · "+chapterCount+" chapter"+(chapterCount===1?"":"s");
+      card.append(cover,title,meta);books.append(card);
+    });
+    section.append(books);
+  }
+  container.append(section);
+}
+
 function showPublicProfile(){
-  const user=JSON.parse(localStorage.getItem("novelpea-account")||"null");
+  const user=getAccount();
   if(!user)return showToast("Please log in to view your profile.");
   const content=$("profileContent");content.replaceChildren();
-  if(Number(user.age)>=13&&Number(user.age)<=17){
+  const isTeen=Number(user.age)>=13&&Number(user.age)<=17;
+  if(isTeen){
     const box=document.createElement("div");box.className="profile-private";
     const heading=document.createElement("h2");heading.textContent="Your profile is private";
-    const message=document.createElement("p");message.textContent="Because your account is for someone aged 13–17, your public profile is private and only visible to you.";
+    const message=document.createElement("p");message.textContent="Because your account is for someone aged 13–17, your profile is private and only visible to you.";
     box.append(heading,message);content.append(box);
-    $("profilePanel").classList.remove("hidden");
-    hideWritingForProfile();
-    return;
+    renderProfile(user,true);
+  }else{
+    renderProfile(user,false);
   }
-  renderProfile(user,false);
-  $("profilePanel").classList.remove("hidden");
-  hideWritingForProfile();
+  $("profilePanel").classList.remove("hidden");hideWritingForProfile();
 }
+
+const PROFILE_COLORS=["#416b4f","#315b78","#79536f","#a65c3b","#5d658f","#3e7772"];
 function renderProfile(user,editing){
   const content=$("profileContent");content.replaceChildren();
-  if(!editing){
-    const name=document.createElement("h2");name.textContent=user.penName||"Writer";
-    const bio=document.createElement("p");bio.className="profile-bio";bio.textContent=user.bio||"NovelPea writer";
-    const edit=document.createElement("button");edit.className="btn primary";edit.type="button";edit.textContent="Edit profile";edit.onclick=()=>renderProfile(user,true);
-    content.append(name,bio,edit);
-    return;
+  const hero=document.createElement("div");hero.className="profile-hero";
+  hero.style.setProperty("--profile-color",user.profileColor||PROFILE_COLORS[0]);
+  const avatar=document.createElement("div");avatar.className="profile-avatar";
+  avatar.textContent=(user.penName||user.fullName||"W").trim().charAt(0).toUpperCase();
+  const intro=document.createElement("div");
+  const name=document.createElement("h2");name.textContent=user.penName||"Writer";
+  const tagline=document.createElement("p");tagline.textContent=user.writingAbout||"NovelPea writer";
+  intro.append(name,tagline);hero.append(avatar,intro);content.append(hero);
+
+  if(user.bio){
+    const bio=document.createElement("p");bio.className="profile-bio";bio.textContent=user.bio;content.append(bio);
   }
-  const form=document.createElement("form");form.className="profile-edit-form";
-  form.innerHTML='<h2>Edit your profile</h2><label for="editPenName">Pen name</label><input id="editPenName" maxlength="60" required><label for="editBio">Bio</label><textarea id="editBio" maxlength="500" placeholder="Tell readers a little about yourself"></textarea><div class="profile-actions"><button class="btn" type="button" id="cancelProfileEdit">Cancel</button><button class="btn primary" type="submit">Save profile</button></div>';
-  content.append(form);
-  form.querySelector("#editPenName").value=user.penName||"";
-  form.querySelector("#editBio").value=user.bio||"";
-  form.querySelector("#cancelProfileEdit").onclick=()=>renderProfile(user,false);
-  form.onsubmit=e=>{
-    e.preventDefault();
-    user.penName=form.querySelector("#editPenName").value.trim();
-    user.bio=form.querySelector("#editBio").value.trim();
-    localStorage.setItem("novelpea-account",JSON.stringify(user));
-    $("greeting").textContent="Good morning, "+(user.penName||user.fullName)+".";
-    $("avatar").textContent=(user.penName||user.fullName||"W")[0].toUpperCase();
-    renderProfile(user,false);showToast("Profile saved.");
-  };
+  const details=document.createElement("div");details.className="profile-details";
+  if(user.location){const location=document.createElement("span");location.className="profile-detail";location.textContent="⌖ "+user.location;details.append(location)}
+  if(user.website){
+    const link=document.createElement("a");link.className="profile-detail";link.textContent="↗ Website";
+    let url=user.website.trim();if(url&&!/^https?:\/\//i.test(url))url="https://"+url;
+    link.href=url;link.target="_blank";link.rel="noopener noreferrer";details.append(link);
+  }
+  if(details.children.length)content.append(details);
+
+  if(!editing){
+    const edit=document.createElement("button");edit.className="btn primary";edit.type="button";edit.textContent="Edit profile";
+    edit.onclick=()=>renderProfile(user,true);content.append(edit);
+  }
+
+  appendProfileNovels(content);
+
+  if(editing){
+    const form=document.createElement("form");form.className="profile-edit-form";
+    form.innerHTML=`
+      <h2>Customize your profile</h2>
+      <label for="editPenName">Pen name</label>
+      <input id="editPenName" maxlength="60" required>
+      <label for="editBio">Bio</label>
+      <textarea id="editBio" maxlength="500" placeholder="Tell readers a little about yourself"></textarea>
+      <label for="editLocation">Location (optional)</label>
+      <input id="editLocation" maxlength="80" placeholder="City, country">
+      <label for="editWebsite">Website (optional)</label>
+      <input id="editWebsite" maxlength="200" type="text" placeholder="yourwebsite.com">
+      <label for="editWritingAbout">About my writing</label>
+      <input id="editWritingAbout" maxlength="100" placeholder="Fantasy writer, aspiring novelist…">
+      <label>Profile color</label>
+      <div class="profile-color-options" id="profileColorOptions"></div>
+      <div class="profile-actions">
+        <button class="btn" type="button" id="cancelProfileEdit">Cancel</button>
+        <button class="btn primary" type="submit">Save profile</button>
+      </div>`;
+    content.append(form);
+    form.querySelector("#editPenName").value=user.penName||"";
+    form.querySelector("#editBio").value=user.bio||"";
+    form.querySelector("#editLocation").value=user.location||"";
+    form.querySelector("#editWebsite").value=user.website||"";
+    form.querySelector("#editWritingAbout").value=user.writingAbout||"";
+
+    let selectedColor=user.profileColor||PROFILE_COLORS[0];
+    const colors=form.querySelector("#profileColorOptions");
+    PROFILE_COLORS.forEach(color=>{
+      const button=document.createElement("button");button.type="button";
+      button.className="profile-color-option"+(color===selectedColor?" selected":"");
+      button.style.background=color;button.setAttribute("aria-label","Choose profile color "+color);
+      button.onclick=()=>{
+        selectedColor=color;
+        colors.querySelectorAll("button").forEach(b=>b.classList.remove("selected"));
+        button.classList.add("selected");
+        hero.style.setProperty("--profile-color",color);
+      };
+      colors.append(button);
+    });
+
+    form.querySelector("#cancelProfileEdit").onclick=()=>renderProfile(user,false);
+    form.onsubmit=e=>{
+      e.preventDefault();
+      user.penName=form.querySelector("#editPenName").value.trim();
+      user.bio=form.querySelector("#editBio").value.trim();
+      user.location=form.querySelector("#editLocation").value.trim();
+      user.website=form.querySelector("#editWebsite").value.trim();
+      user.writingAbout=form.querySelector("#editWritingAbout").value.trim();
+      user.profileColor=selectedColor;
+      saveAccount(user);updateAccountUI(user);renderProfile(user,false);
+      showToast("Profile saved.");
+    };
+  }
 }
+
 function hideWritingForProfile(){
-  document.querySelector(".project-bar").classList.add("hidden");
-  document.querySelector(".workspace").classList.add("hidden");
-  document.querySelector(".tip").classList.add("hidden");
+  $("projectBar").classList.add("hidden");$("workspace").classList.add("hidden");
+  $("writingTip").classList.add("hidden");$("libraryPanel").classList.add("hidden");
 }
-function hidePublicProfile(){
-  $("profilePanel").classList.add("hidden");
-  document.querySelector(".project-bar").classList.remove("hidden");
-  document.querySelector(".workspace").classList.remove("hidden");
-  document.querySelector(".tip").classList.remove("hidden");
+function showWorkspace(){
+  $("profilePanel").classList.add("hidden");$("libraryPanel").classList.add("hidden");
+  $("projectBar").classList.remove("hidden");$("workspace").classList.remove("hidden");$("writingTip").classList.remove("hidden");
 }
 $("profileBtn").onclick=showPublicProfile;
-$("backToWritingBtn").onclick=hidePublicProfile;
+$("backToWritingBtn").onclick=showWorkspace;
 
 function render(){
   $("novelName").value=activeNovel.title;$("novelCrumb").textContent=activeNovel.title;
@@ -257,7 +447,7 @@ function render(){
   $("chapterCrumb").textContent=activeChapter.title;$("chapterKicker").textContent="Chapter "+String(activeNovel.chapters.indexOf(activeChapter)+1).padStart(2,"0");
   $("writingPage").classList.remove("hidden");$("sidePanel").classList.add("hidden");
   document.querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.view==="Manuscript"));
-  renderChapters();updateCounts();resizeTitle();
+  renderChapters();updateCounts();resizeTitle();renderNovelLibrary();
 }
 function renderChapters(){
   const list=$("chapterList");list.innerHTML="";
@@ -277,7 +467,7 @@ function saveActive(){
 }
 function scheduleSave(){
   $("saveStatus").textContent="Saving…";clearTimeout(saveTimer);
-  saveTimer=setTimeout(()=>{saveActive();$("saveStatus").textContent="Saved in this browser";renderChapters();$("chapterCrumb").textContent=activeChapter.title;$("novelCrumb").textContent=activeNovel.title;$("projectMeta").textContent=activeNovel.chapters.length+" chapters"},300);
+  saveTimer=setTimeout(()=>{saveActive();$("saveStatus").textContent="Saved in this browser";renderChapters();$("chapterCrumb").textContent=activeChapter.title;$("novelCrumb").textContent=activeNovel.title;$("projectMeta").textContent=activeNovel.chapters.length+" chapters";renderNovelLibrary()},300);
 }
 function updateCounts(){const text=$("writing").value.trim();$("wordCount").textContent=text?text.split(/\s+/).length:0;$("charCount").textContent=$("writing").value.length}
 function resizeTitle(){$("chapterTitle").style.height="auto";$("chapterTitle").style.height=$("chapterTitle").scrollHeight+"px"}
@@ -289,7 +479,7 @@ $("redoBtn").onclick=()=>{if(!redoStack.length)return showToast("Nothing to redo
 
 function addChapter(){
   saveActive();const i=activeNovel.chapters.length+1,words=["One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen","Twenty"];
-  const chapter={id:crypto.randomUUID(),title:"Chapter "+(words[i-1]||i),text:""};
+  const chapter={id:makeId(),title:"Chapter "+(words[i-1]||i),text:""};
   activeNovel.chapters.push(chapter);activeChapter=chapter;activeNovel.activeChapterId=chapter.id;persist();render();$("chapterTitle").focus();showToast("New chapter created.");
 }
 $("addChapter").onclick=addChapter;$("newChapterBtn").onclick=addChapter;
@@ -298,40 +488,123 @@ $("deleteChapterBtn").onclick=()=>{
   if(!confirm("Delete “"+activeChapter.title+"”? This cannot be undone."))return;
   activeNovel.chapters=activeNovel.chapters.filter(c=>c.id!==activeChapter.id);activeChapter=activeNovel.chapters[0];activeNovel.activeChapterId=activeChapter.id;persist();render();showToast("Chapter deleted.");
 };
-function openModal(title,placeholder,action){$("modalTitle").textContent=title;$("modalInput").placeholder=placeholder;$("modalInput").value="";modalAction=action;$("modalBackdrop").classList.remove("hidden");$("modalInput").focus()}
-$("newNovelBtn").onclick=()=>openModal("Create a new novel","Novel title",name=>{
-  saveActive();const novel=starter();novel.title=name;novel.activeChapterId=novel.chapters[0].id;library.novels.push(novel);library.activeNovelId=novel.id;activeNovel=novel;activeChapter=novel.chapters[0];persist();render();showToast("New novel created.");
-});
+
+function openModal(title,placeholder,action){
+  $("modalTitle").textContent=title;$("modalInput").placeholder=placeholder;$("modalInput").value="";
+  modalAction=action;$("modalBackdrop").classList.remove("hidden");$("modalInput").focus();
+}
+function createNovel(name){
+  saveActive();const novel=starter();novel.title=name;novel.activeChapterId=novel.chapters[0].id;
+  library.novels.push(novel);library.activeNovelId=novel.id;activeNovel=novel;activeChapter=novel.chapters[0];
+  persist();showWorkspace();render();showToast("New novel created.");
+}
+$("newNovelBtn").onclick=()=>openModal("Create a new novel","Novel title",createNovel);
+$("libraryNewNovel").onclick=()=>openModal("Create a new novel","Novel title",createNovel);
 $("modalCancel").onclick=()=>$("modalBackdrop").classList.add("hidden");
 $("modalBackdrop").onclick=e=>{if(e.target===$("modalBackdrop"))$("modalBackdrop").classList.add("hidden")};
 $("modalSave").onclick=()=>{const name=$("modalInput").value.trim();if(!name)return $("modalInput").focus();modalAction?.(name);$("modalBackdrop").classList.add("hidden")};
 $("modalInput").addEventListener("keydown",e=>{if(e.key==="Enter")$("modalSave").click();if(e.key==="Escape")$("modalCancel").click()});
+
 $("exportBtn").onclick=()=>{
   saveActive();const content=activeNovel.title.toUpperCase()+"\n\n"+activeNovel.chapters.map(c=>c.title.toUpperCase()+"\n\n"+c.text).join("\n\n\n");
   const blob=new Blob([content],{type:"text/plain;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");
   a.href=url;a.download=activeNovel.title.replace(/[^\w\-]+/g,"-").toLowerCase()+".txt";a.click();URL.revokeObjectURL(url);showToast("Novel exported as a text file.");
 };
+
+function showLibrary(){
+  saveActive();$("profilePanel").classList.add("hidden");$("projectBar").classList.add("hidden");
+  $("workspace").classList.add("hidden");$("writingTip").classList.add("hidden");
+  $("libraryPanel").classList.remove("hidden");renderNovelLibrary();
+}
+$("yourNovelsBtn").onclick=showLibrary;
+$("brandHome").onclick=e=>{e.preventDefault();showWorkspace()};
+
+function renderNovelLibrary(){
+  if(!$("novelGrid"))return;
+  const query=$("librarySearch").value.trim().toLowerCase(),filter=$("libraryFilter").value;
+  const novels=library.novels.filter(novel=>(novel.title+" "+(novel.genre||"")).toLowerCase().includes(query)&&(filter==="all"||novel.status===filter));
+  const grid=$("novelGrid");grid.replaceChildren();
+  if(!novels.length){
+    const empty=document.createElement("div");empty.className="library-empty";
+    const strong=document.createElement("strong");strong.textContent="No novels found";
+    const text=document.createElement("span");text.textContent="Try another search or create a new novel.";
+    empty.append(strong,text);grid.append(empty);return;
+  }
+  const symbols=["✦","◉","♟","🌙","🏰","❖"];
+  novels.forEach((novel,index)=>{
+    const card=document.createElement("article");card.className="novel-card";
+    const cover=document.createElement("div");cover.className="novel-cover cover-"+(index%6);
+    const coverTitle=document.createElement("div");coverTitle.className="novel-cover-title";coverTitle.textContent=novel.title;
+    const symbol=document.createElement("div");symbol.className="novel-cover-symbol";symbol.textContent=symbols[index%symbols.length];
+    const author=document.createElement("div");author.className="novel-cover-author";author.textContent="NovelPea";
+    cover.append(coverTitle,symbol,author);
+    const info=document.createElement("div");info.className="novel-card-info";
+    const details=document.createElement("div");details.style.minWidth="0";
+    const title=document.createElement("div");title.className="novel-card-title";title.textContent=novel.title;
+    const genre=document.createElement("div");genre.className="novel-card-genre";genre.textContent=novel.genre||"Novel";
+    const status=document.createElement("span");status.className="novel-status";status.textContent=novel.status==="completed"?"Completed":"In progress";
+    details.append(title,genre,status);info.append(details);
+    const actions=document.createElement("div");actions.className="novel-card-actions";
+    const open=document.createElement("button");open.type="button";open.className="novel-open";open.textContent=novel.id===activeNovel.id?"Currently open":"Open novel";
+    open.onclick=()=>{
+      saveActive();library.activeNovelId=novel.id;activeNovel=novel;
+      activeChapter=novel.chapters.find(c=>c.id===novel.activeChapterId)||novel.chapters[0];
+      persist();showWorkspace();render();showToast("Opened "+novel.title);
+    };
+    const deleteButton=document.createElement("button");deleteButton.type="button";deleteButton.className="novel-delete";deleteButton.textContent="Delete";
+    deleteButton.setAttribute("aria-label","Delete "+novel.title);
+    deleteButton.onclick=()=>{
+      if(!confirm('Delete "'+novel.title+'"? This cannot be undone.'))return;
+      const deletingActive=novel.id===activeNovel.id;
+      library.novels=library.novels.filter(item=>item.id!==novel.id);
+      if(library.novels.length===0){
+        const testNovel=makeTestNovel();library.novels.push(testNovel);
+        library.activeNovelId=testNovel.id;activeNovel=testNovel;activeChapter=testNovel.chapters[0];
+        persist();render();renderNovelLibrary();showToast("Last novel deleted. A 3-chapter test novel was created.");return;
+      }
+      if(deletingActive){
+        activeNovel=library.novels[0];library.activeNovelId=activeNovel.id;
+        activeChapter=activeNovel.chapters.find(c=>c.id===activeNovel.activeChapterId)||activeNovel.chapters[0];
+      }
+      persist();render();renderNovelLibrary();showToast("Novel deleted.");
+    };
+    actions.append(open,deleteButton);card.append(cover,info,actions);grid.append(card);
+  });
+}
+$("librarySearch").addEventListener("input",renderNovelLibrary);
+$("libraryFilter").addEventListener("change",renderNovelLibrary);
+
 const panelFields={"Story bible":["Story bible","Keep track of your world, rules, themes, and plot details.","bible"],"Characters":["Characters","Write character profiles, motivations, and relationships.","characters"],"Places":["Places","Describe the settings and important locations in your novel.","places"],"Notes":["Notes","Keep other ideas and reminders for your story here.","notes"]};
 document.querySelectorAll(".nav-item").forEach(button=>button.onclick=()=>{
   document.querySelectorAll(".nav-item").forEach(b=>b.classList.remove("active"));button.classList.add("active");
   const view=button.dataset.view;
   if(view==="Manuscript"){$("sidePanel").classList.add("hidden");$("writingPage").classList.remove("hidden");return}
-  saveActive();const [heading,description,key]=panelFields[view];$("writingPage").classList.add("hidden");$("sidePanel").classList.remove("hidden");
+  saveActive();const [heading,description,key]=panelFields[view];
+  $("writingPage").classList.add("hidden");$("sidePanel").classList.remove("hidden");
   $("sidePanel").innerHTML=`<h2>${heading}</h2><p>${description}</p><textarea id="panelText" placeholder="Write here..."></textarea>`;
-  $("panelText").value=activeNovel[key]||"";$("panelText").addEventListener("input",()=>{activeNovel[key]=$("panelText").value;persist();$("saveStatus").textContent="Saved in this browser"});
+  $("panelText").value=activeNovel[key]||"";
+  $("panelText").addEventListener("input",()=>{activeNovel[key]=$("panelText").value;persist();$("saveStatus").textContent="Saved in this browser"});
 });
+
 $("focusBtn").onclick=()=>{
   const on=!document.body.classList.contains("focus-mode");document.body.classList.toggle("focus-mode",on);
   ["header",".welcome",".project-bar","aside",".tip"].forEach(s=>document.querySelector(s).classList.toggle("hidden",on));
   $("focusBtn").textContent=on?"✕ Exit focus mode":"⛶ Focus mode";document.querySelector("main").style.width=on?"min(800px,94%)":"";
 };
 document.querySelectorAll("[data-format]").forEach(btn=>btn.onclick=()=>{
-  const el=$("writing"),start=el.selectionStart,end=el.selectionEnd;if(start===end)return showToast("Select text in your chapter first.");
+  const el=$("writing"),start=el.selectionStart,end=el.selectionEnd;
+  if(start===end)return showToast("Select text in your chapter first.");
   const mark={bold:"**",italic:"*",underline:"_"}[btn.dataset.format],selected=el.value.slice(start,end);
   el.setRangeText(mark+selected+mark,start,end,"select");el.focus();updateCounts();scheduleSave();
 });
-document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="s"){e.preventDefault();saveActive();$("saveStatus").textContent="Saved in this browser";showToast("Your novel is saved.")}});
-if(localStorage.getItem("novelpea-session")==="true"){const user=JSON.parse(localStorage.getItem("novelpea-account")||"null");if(user)enterApp(user)}
+document.addEventListener("keydown",e=>{
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="s"){
+    e.preventDefault();saveActive();$("saveStatus").textContent="Saved in this browser";showToast("Your novel is saved.");
+  }
+});
+if(localStorage.getItem("novelpea-session")==="true"){
+  const user=getAccount();if(user)enterApp(user);
+}
 </script>
 </body>
 </html>
